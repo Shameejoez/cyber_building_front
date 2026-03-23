@@ -1,22 +1,24 @@
 
 
-const WorkTable = () => {
+export const WorkTable = () => {
     return (
-        <>
-            <header className="header">
-                <nav className="header__nav header_nav">
-
-                </nav>
-                <button className="header_nav__button"></button>
-                <p className="greeting_user">Привет, Username</p>
-                <form className="search" role="search">
-                <input type="search" />
-                </form>
-            </header>
-
-            <main className="main-page">
-                    <h1></h1>
-            </main>
-        </>
+        <div className="w-full py-10 h-full bg-[#f4f4f4] ">
+            
+            <h1 className="ml-32 text-5xl">Dashboard</h1>
+            {/* Карточки дашборда */}
+            <ul className="dashboard_header">
+                <li className="dashboard_task">
+                    <article>   
+                        <h2 className="visually-hidden">Карточка задачи</h2>
+                        <p className="task_description"></p>
+                    </article>
+                </li>
+            </ul>
+            {/* Детали по выбранной карточке */}
+            <section className="dashboard_details">
+                <h2 className="visually-hidden">Детали задачи</h2>
+                <p className="details_text"></p>
+            </section>
+        </div>
     )
 }
