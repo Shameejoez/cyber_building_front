@@ -1,8 +1,9 @@
 import Sun from '../../../public/images/icons/sun.svg?react'
 import Burger from '../../../public/images/icons/burger.svg?react'
 import Bell from '../../../public/images/icons/bell.svg?react'
+import Closed from '../../../public/images/icons/buttons/closedBtn.svg?react'
 import { useState } from 'react'
-import { Accordion } from './accordion/Accordion'
+import { Accordion } from '../Accordion/Accordion'
 type HeaderProps = {
     
 }
@@ -21,13 +22,18 @@ export const Header = ({}: HeaderProps) => {
             {/* НАВИГАЦИЯ */}
                     <div className= {`absolute w-64 z-10 flex h-full left-0 top-0 transition-transform px-5 duration-300 ease-in-out shadow-lg bg-white
                         ${isMainNav ? 'translate-x-0' : '-translate-x-full'}`}>
-                               <nav className="flex items-center  flex-col w-full h-full   pt-50">
+                               <nav className="flex items-center  flex-col w-full h-full  pt-50">
                                 <Accordion/>
                                </nav>
-                               <button className="absolute -right-20 top-4 z-20 pt-7.5" 
+                               <button className={`absolute -right-20 top-4 z-20 pt-7.5  ${isMainNav ? 'right-2' : '-right-20'}`}
                                        onClick={() => onClickUseMainNav()}>
                                     <span className='visually-hidden'>Кнопка меню</span>
-                                    <Burger className="w-7 h-7"/>
+                                    {
+                                        isMainNav ?
+                                        <Closed className="w-7 h-7"/> :
+                                        <Burger className="w-7 h-7"/>
+                                    }
+                                    
                                </button>
                     </div>
                     <div className=''>
@@ -59,7 +65,7 @@ export const Header = ({}: HeaderProps) => {
                             <span>Имя</span>
                         </button>
                         <ul className=
-                        {`absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg py-1 ${isUserMenu && 'hidden'}`} >
+                        {`absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg py-1 ${isUserMenu === false && 'hidden'}`} >
                             <li><a href="" className='block px-4 py-2 hover:bg-gray-100'>Настройки профиля</a></li>
                             <li><a href="" className='block px-4 py-2 hover:bg-gray-100'>Выйти из профиля</a></li>
                         </ul>

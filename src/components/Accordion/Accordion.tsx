@@ -1,5 +1,5 @@
 import { useState, type MouseEvent } from "react"
-import Arrow from "../../../../public/images/icons/buttons/accordArrow.svg?react"
+import Arrow from "../../../public/images/icons/buttons/accordArrow.svg?react"
 
 type AccordionProps = {
     
