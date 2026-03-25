@@ -1,4 +1,3 @@
-import { AddUser } from "../components/Forms/AddUser"
 
 
 export const WorkTable = () => {
@@ -18,9 +17,8 @@ export const WorkTable = () => {
             {/* Детали по выбранной карточке */}
             <section className="dashboard_details relative h-full">
              
-                    <AddUser/>
            
-                
+             
                 <h2 className="visually-hidden">Детали задачи</h2>
                 <p className="details_text"></p>
             </section>
