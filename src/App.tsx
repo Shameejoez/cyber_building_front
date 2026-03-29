@@ -12,9 +12,8 @@ function App() {
 
   return (
     <>
-     <Header/>
-     <main className='flex relative w-full h-full justify-start items-start flex-col mt-28 overflow-hidden'>
-
+      <Header/>
+      <main className='flex relative w-full h-full justify-start items-start flex-col mt-28 overflow-hidden'>
       <Outlet/>
      </main>
   </>
